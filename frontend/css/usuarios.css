@@ -1,0 +1,499 @@
+/* ==========================================================================
+   AbogaSys - Estilos del Módulo Usuarios
+   ========================================================================== */
+
+/* Barra de Cabecera del Módulo */
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.module-title-group h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    line-height: 1.2;
+}
+
+.module-description {
+    font-size: 0.875rem;
+    color: var(--text-muted, #64748b);
+    margin-top: 0.25rem;
+}
+
+/* Barra de Herramientas (Buscador y Botón Nuevo) */
+.module-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    min-width: 280px;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    height: 42px;
+    padding: 0 14px 0 38px;
+    font-size: 0.875rem;
+    background-color: var(--surface-white, #ffffff);
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    color: var(--text-main, #1e293b);
+    outline: none;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.search-input:focus {
+    border-color: var(--accent, #c5a059);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+/* Botón Primario */
+.btn-primary {
+    height: 42px;
+    padding: 0 1.25rem;
+    background: linear-gradient(135deg, var(--primary, #0f172a) 0%, var(--primary-light, #1e293b) 100%);
+    color: #ffffff;
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: var(--radius-md, 8px);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-color: var(--accent, #c5a059);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+}
+
+.btn-primary svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Botón Secundario / Cancelar */
+.btn-secondary {
+    height: 42px;
+    padding: 0 1.25rem;
+    background-color: #ffffff;
+    color: var(--text-main, #1e293b);
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-light, #f8fafc);
+    border-color: #94a3b8;
+}
+
+/* ==========================================================================
+   Tabla de Usuarios
+   ========================================================================== */
+.table-card {
+    background-color: var(--surface-white, #ffffff);
+    border-radius: var(--radius-lg, 14px);
+    border: 1px solid var(--border-color, #e2e8f0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.user-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-cell-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(197, 160, 89, 0.15);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    color: var(--accent, #c5a059);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.user-cell-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-cell-name {
+    font-weight: 600;
+    color: var(--primary, #0f172a);
+}
+
+.user-cell-email {
+    font-size: 0.785rem;
+    color: var(--text-muted, #64748b);
+}
+
+/* Badges de Roles */
+.role-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.role-badge.admin {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+}
+
+.role-badge.abogado {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.role-badge.asistente {
+    background-color: #f1f5f9;
+    color: #334155;
+    border: 1px solid rgba(100, 116, 139, 0.25);
+}
+
+/* Badges de Estado */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.status-badge.active {
+    background-color: #ecfdf5;
+    color: #065f46;
+}
+
+.status-badge.active::before {
+    background-color: #10b981;
+}
+
+.status-badge.inactive {
+    background-color: #f8fafc;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.status-badge.inactive::before {
+    background-color: #94a3b8;
+}
+
+/* Botones de Acción en Tabla */
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #e2e8f0);
+    background-color: #ffffff;
+    color: var(--text-muted, #64748b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-action svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-action.edit:hover {
+    background-color: #eff6ff;
+    color: #2563eb;
+    border-color: #bfdbfe;
+}
+
+.btn-action.deactivate:hover {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.btn-action.activate:hover {
+    background-color: #ecfdf5;
+    color: #059669;
+    border-color: #a7f3d0;
+}
+
+/* ==========================================================================
+   Formularios de Usuario (Registrar y Editar)
+   ========================================================================== */
+.form-card {
+    background-color: var(--surface-white, #ffffff);
+    border-radius: var(--radius-lg, 14px);
+    border: 1px solid var(--border-color, #e2e8f0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    max-width: 820px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.form-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.form-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+}
+
+.form-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted, #64748b);
+    margin-top: 0.25rem;
+}
+
+.user-form {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-light, #1e293b);
+}
+
+.form-field .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-field .form-input,
+.form-field .form-select {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    font-size: 0.925rem;
+    color: var(--text-main, #1e293b);
+    background-color: var(--surface-white, #ffffff);
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    outline: none;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.form-field .form-input:focus,
+.form-field .form-select:focus {
+    border-color: var(--accent, #c5a059);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+.form-field .form-input.has-error,
+.form-field .form-select.has-error {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.form-field .field-error {
+    display: none;
+    font-size: 0.775rem;
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.form-field.error .field-error {
+    display: block;
+}
+
+.form-field .toggle-password-btn {
+    position: absolute;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.form-field .toggle-password-btn:hover {
+    color: var(--primary, #0f172a);
+    background-color: #f1f5f9;
+}
+
+.form-field .toggle-password-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Opciones de Radio / Estado */
+.status-radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    height: 44px;
+}
+
+.status-radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text-main, #1e293b);
+}
+
+.status-radio-label input[type="radio"] {
+    accent-color: var(--accent, #c5a059);
+    width: 16px;
+    height: 16px;
+}
+
+/* Barra de Botones del Formulario */
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+}
+
+/* Notificación Flotante / Toast */
+.toast-feedback {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: var(--primary, #0f172a);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    border-left: 4px solid var(--accent, #c5a059);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 200;
+    animation: fadeInToast 0.3s ease;
+}
+
+@keyframes fadeInToast {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .module-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .module-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        min-width: 100%;
+    }
+
+    .btn-primary {
+        justify-content: center;
+    }
+
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .user-form {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions .btn-primary,
+    .form-actions .btn-secondary {
+        width: 100%;
+    }
+}

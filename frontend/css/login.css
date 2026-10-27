@@ -1,0 +1,541 @@
+/* ==========================================================================
+   AbogaSys - Enterprise LegalTech Login Styling
+   Diseño comercial de alta gama para firmas y despachos jurídicos
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.login-page-body {
+    font-family: var(--font-sans, 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif);
+    background-color: var(--legal-navy-950, #0a0f1d);
+    color: var(--legal-slate-800, #1e293b);
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+}
+
+/* Layout Dividido Pantalla Completa */
+.login-split-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   Columna Izquierda: Showcase de Marca (Hero)
+   ========================================================================== */
+.login-brand-panel {
+    flex: 1.15;
+    background: radial-gradient(circle at 10% 20%, #152238 0%, #0a0f1d 90%);
+    color: #ffffff;
+    padding: 3.5rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.login-brand-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 0),
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    pointer-events: none;
+}
+
+.brand-panel-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Marca Superior */
+.brand-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.brand-logo-badge {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(197, 160, 89, 0.25) 0%, rgba(197, 160, 89, 0.1) 100%);
+    border: 1px solid rgba(197, 160, 89, 0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--legal-gold-500, #c5a059);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.brand-logo-badge svg {
+    width: 26px;
+    height: 26px;
+}
+
+.brand-name-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title-main {
+    font-size: 1.625rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.gold-accent {
+    color: var(--legal-gold-500, #c5a059);
+}
+
+.brand-tagline {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--legal-slate-400, #94a3b8);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Hero Text */
+.brand-hero-text {
+    margin-bottom: 3rem;
+}
+
+.hero-headline {
+    font-size: 2.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+    color: #f8fafc;
+    margin-bottom: 1.25rem;
+}
+
+.hero-subtext {
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--legal-slate-300, #cbd5e1);
+}
+
+/* Pilares / Features */
+.brand-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.pillar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.125rem;
+}
+
+.pillar-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--legal-gold-400, #d4b574);
+    flex-shrink: 0;
+}
+
+.pillar-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pillar-desc h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+}
+
+.pillar-desc p {
+    font-size: 0.875rem;
+    color: var(--legal-slate-400, #94a3b8);
+    line-height: 1.45;
+}
+
+/* Footer Showcase */
+.brand-footer-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8125rem;
+    color: var(--legal-slate-400, #94a3b8);
+}
+
+.status-indicator-live {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+/* ==========================================================================
+   Columna Derecha: Tarjeta de Login
+   ========================================================================== */
+.login-form-panel {
+    flex: 0.95;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+}
+
+.login-card-container {
+    width: 100%;
+    max-width: 440px;
+}
+
+.form-header {
+    margin-bottom: 1.75rem;
+}
+
+.form-heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--legal-slate-900, #0f172a);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.4rem;
+}
+
+.form-subheading {
+    font-size: 0.925rem;
+    color: var(--legal-slate-500, #64748b);
+    line-height: 1.45;
+}
+
+/* Píldora de Demostración Rápida */
+.demo-access-pill {
+    background: var(--legal-gold-50, #fdfcf7);
+    border: 1px dashed var(--legal-gold-500, #c5a059);
+    border-radius: var(--radius-md, 10px);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.demo-access-pill:hover {
+    background: var(--legal-gold-100, #faf6ec);
+    border-color: var(--legal-gold-600, #b08d46);
+    transform: translateY(-1px);
+}
+
+.demo-pill-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(197, 160, 89, 0.18);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--legal-gold-600, #b08d46);
+    flex-shrink: 0;
+}
+
+.demo-pill-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.demo-pill-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-pill-text span {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--legal-slate-800, #1e293b);
+}
+
+.demo-pill-text small {
+    font-size: 0.75rem;
+    color: var(--legal-gold-600, #b08d46);
+    font-weight: 500;
+}
+
+/* Formularios */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--legal-slate-700, #334155);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    width: 19px;
+    height: 19px;
+    color: var(--legal-slate-400, #94a3b8);
+    pointer-events: none;
+    transition: color 0.15s ease;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--legal-slate-900, #0f172a);
+    background-color: var(--legal-slate-50, #f8fafc);
+    border: 1.5px solid var(--legal-slate-200, #e2e8f0);
+    border-radius: var(--radius-md, 10px);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    background-color: #ffffff;
+    border-color: var(--legal-gold-500, #c5a059);
+    box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.15);
+}
+
+.form-input:focus + .input-icon,
+.input-wrapper:focus-within .input-icon {
+    color: var(--legal-gold-600, #b08d46);
+}
+
+.toggle-password-btn {
+    position: absolute;
+    right: 0.875rem;
+    background: transparent;
+    border: none;
+    color: var(--legal-slate-400, #94a3b8);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s;
+}
+
+.toggle-password-btn:hover {
+    color: var(--legal-slate-700, #334155);
+}
+
+.toggle-password-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Alerta Bloq Mayús */
+.caps-warning {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.775rem;
+    color: var(--status-warning-text, #92400e);
+    background: var(--status-warning-bg, #fffbeb);
+    padding: 0.35rem 0.65rem;
+    border-radius: 6px;
+    margin-top: 0.25rem;
+    border: 1px solid var(--status-warning-border, #fde68a);
+}
+
+.caps-warning svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Mensajes de error */
+.error-message {
+    font-size: 0.8125rem;
+    color: #dc2626;
+    min-height: 1rem;
+    font-weight: 500;
+}
+
+.form-group.has-error .form-input {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+/* Opciones: Recordarme / Olvidaste contraseña */
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--legal-slate-600, #475569);
+    cursor: pointer;
+}
+
+.remember-checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--legal-navy-900, #0f172a);
+    cursor: pointer;
+}
+
+.forgot-password-link {
+    color: var(--legal-gold-600, #b08d46);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.forgot-password-link:hover {
+    color: var(--legal-navy-900, #0f172a);
+    text-decoration: underline;
+}
+
+/* Botón de Enviar */
+.submit-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background-color: var(--legal-navy-900, #0f172a);
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md, 10px);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--legal-gold-600, #b08d46);
+    box-shadow: 0 6px 16px rgba(176, 141, 70, 0.35);
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.15s;
+}
+
+.submit-btn:hover svg {
+    transform: translateX(3px);
+}
+
+/* Pie de tarjeta */
+.login-card-footer {
+    margin-top: 2.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--legal-slate-200, #e2e8f0);
+}
+
+.security-notice {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.775rem;
+    color: var(--legal-slate-500, #64748b);
+    line-height: 1.4;
+}
+
+.security-notice svg {
+    width: 16px;
+    height: 16px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .login-brand-panel {
+        padding: 3rem 2.5rem;
+    }
+    .hero-headline {
+        font-size: 1.75rem;
+    }
+    .login-form-panel {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 860px) {
+    .login-split-layout {
+        flex-direction: column;
+    }
+    .login-brand-panel {
+        display: none; /* En móviles mostramos solo el formulario limpio */
+    }
+    .login-form-panel {
+        padding: 2rem 1.25rem;
+        min-height: 100vh;
+        background-color: var(--legal-slate-50, #f8fafc);
+    }
+    .login-card-container {
+        background: #ffffff;
+        padding: 2.25rem 1.75rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+        border: 1px solid var(--legal-slate-200, #e2e8f0);
+    }
+}

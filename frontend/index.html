@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AbogaSys - Plataforma web profesional para la gestión integral de despachos jurídicos y bufetes de abogados.">
+    <title>AbogaSys — Plataforma de Gestión Jurídica</title>
+    <!-- Hojas de estilos del sistema -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/ui-core.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body class="login-page-body">
+    <div class="login-split-layout">
+        <!-- Columna Izquierda: Showcase Corporativo LegalTech -->
+        <aside class="login-brand-panel" aria-label="Información institucional de AbogaSys">
+            <div class="brand-panel-content">
+                <!-- Marca Superior -->
+                <div class="brand-top">
+                    <div class="brand-logo-badge" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="3" x2="12" y2="21"></line>
+                            <line x1="4" y1="7" x2="20" y2="7"></line>
+                            <polyline points="4 7 1 14 7 14 4 7"></polyline>
+                            <polyline points="20 7 17 14 23 14 20 7"></polyline>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="brand-name-group">
+                        <span class="brand-title-main">Aboga<span class="gold-accent">Sys</span></span>
+                        <span class="brand-tagline">Enterprise LegalTech Suite</span>
+                    </div>
+                </div>
+
+                <!-- Título y Propuesta de Valor -->
+                <div class="brand-hero-text">
+                    <h1 class="hero-headline">El estándar tecnológico para despachos jurídicos de alto rendimiento.</h1>
+                    <p class="hero-subtext">Control absoluto de causas procesales, audiencias con alertas de plazos fatales, bóveda documental cifrada y gestión integral de poderdantes.</p>
+                </div>
+
+                <!-- Pilares del Sistema -->
+                <div class="brand-pillars">
+                    <div class="pillar-item">
+                        <div class="pillar-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="pillar-desc">
+                            <h4>Control de Causas 360°</h4>
+                            <p>Seguimiento de etapas, partes procesales y cuadernos de incidentes en tiempo real.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <div class="pillar-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="pillar-desc">
+                            <h4>Agenda de Términos y Audiencias</h4>
+                            <p>Semáforo de vencimientos procesales para garantizar cero preclusiones de plazos.</p>
+                        </div>
+                    </div>
+
+                    <div class="pillar-item">
+                        <div class="pillar-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <div class="pillar-desc">
+                            <h4>Seguridad y Confidencialidad</h4>
+                            <p>Control de roles RBAC y aislamiento documental para proteger el secreto profesional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer del Panel Izquierdo -->
+                <div class="brand-footer-status">
+                    
+                    <span class="copyright-legal">&copy; 2026 AbogaSys. Software para Despachos de Abogados.</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Columna Derecha: Tarjeta de Autenticación -->
+        <main class="login-form-panel">
+            <div class="login-card-container">
+                <header class="form-header">
+                    <h2 class="form-heading">Iniciar Sesión</h2>
+                    <p class="form-subheading">Ingresa tus credenciales autorizadas para acceder a tu despacho</p>
+                </header>
+
+                <!-- Tarjeta / Píldora de Demostración Rápida -->
+                <div class="demo-access-pill" id="demo-access-btn" role="button" tabindex="0" title="Haz clic para autocompletar credenciales de Administrador">
+                    <div class="demo-pill-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                        </svg>
+                    </div>
+                    <div class="demo-pill-text">
+                        <span>Autocompletar acceso de Administrador</span>
+                        <small>admin@abogasys.com (Clic aquí)</small>
+                    </div>
+                </div>
+
+                <!-- Formulario de Inicio de Sesión -->
+                <form id="login-form" class="login-form" novalidate>
+                    <!-- Campo Correo Electrónico -->
+                    <div class="form-group" id="email-group">
+                        <label for="email" class="form-label">Correo institucional</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="nombre@despacho.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                        <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Campo Contraseña con Mostrar/Ocultar -->
+                    <div class="form-group" id="password-group">
+                        <label for="password" class="form-label">Contraseña de acceso</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                class="form-input"
+                                placeholder="••••••••••••"
+                                autocomplete="current-password"
+                                required
+                            >
+                            <button
+                                type="button"
+                                id="toggle-password-btn"
+                                class="toggle-password-btn"
+                                aria-label="Mostrar contraseña"
+                                aria-pressed="false"
+                                title="Mostrar contraseña"
+                            >
+                                <svg class="toggle-icon icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <svg class="toggle-icon icon-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+                                    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                    <line x1="1" y1="1" x2="23" y2="23"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="caps-lock-warning" class="caps-warning" style="display: none;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                            Bloq Mayús está activado
+                        </div>
+                        <span id="password-error" class="error-message" role="alert" aria-live="polite"></span>
+                    </div>
+
+                    <!-- Opciones: Recordarme y Ayuda -->
+                    <div class="form-options">
+                        <label class="remember-me" for="remember">
+                            <input type="checkbox" id="remember" name="remember" class="remember-checkbox">
+                            <span>Recordar sesión</span>
+                        </label>
+                        <a href="javascript:void(0)" id="link-forgot-pwd" class="forgot-password-link">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- Botón de Envío -->
+                    <button type="submit" id="submit-btn" class="submit-btn">
+                        <span>Ingresar al Sistema Jurídico</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Pie de página de la tarjeta -->
+                <footer class="login-card-footer">
+                    <p class="security-notice">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        Conexión cifrada de extremo a extremo con cumplimiento deontológico.
+                    </p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts desacoplados y modulares -->
+    <script src="js/ui-core.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,587 @@
+/* ==========================================================================
+   AbogaSys - Enterprise LegalTech UI Core System
+   Estilos base para componentes de nivel corporativo comercial
+   ========================================================================== */
+
+:root {
+    /* Paleta Institucional LegalTech */
+    --legal-navy-950: #0a0f1d;
+    --legal-navy-900: #0f172a;
+    --legal-navy-800: #1e293b;
+    --legal-navy-700: #334155;
+    
+    --legal-gold-600: #b08d46;
+    --legal-gold-500: #c5a059;
+    --legal-gold-400: #d4b574;
+    --legal-gold-100: #faf6ec;
+    --legal-gold-50:  #fdfcf7;
+
+    --legal-slate-50:  #f8fafc;
+    --legal-slate-100: #f1f5f9;
+    --legal-slate-200: #e2e8f0;
+    --legal-slate-300: #cbd5e1;
+    --legal-slate-400: #94a3b8;
+    --legal-slate-500: #64748b;
+    --legal-slate-600: #475569;
+    --legal-slate-700: #334155;
+    --legal-slate-800: #1e293b;
+    --legal-slate-900: #0f172a;
+
+    /* Semántica Procesal */
+    --status-success-bg: #ecfdf5;
+    --status-success-text: #065f46;
+    --status-success-border: #a7f3d0;
+    --status-success-dot: #10b981;
+
+    --status-warning-bg: #fffbeb;
+    --status-warning-text: #92400e;
+    --status-warning-border: #fde68a;
+    --status-warning-dot: #f59e0b;
+
+    --status-danger-bg: #fef2f2;
+    --status-danger-text: #991b1b;
+    --status-danger-border: #fecaca;
+    --status-danger-dot: #ef4444;
+
+    --status-info-bg: #eff6ff;
+    --status-info-text: #1e40af;
+    --status-info-border: #bfdbfe;
+    --status-info-dot: #3b82f6;
+
+    /* Tipografía y sombras */
+    --font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, system-ui, sans-serif;
+    --font-mono: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px -1px rgba(15, 23, 42, 0.1);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+    --shadow-modal: 0 25px 50px -12px rgba(10, 15, 29, 0.35);
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-full: 9999px;
+}
+
+/* ==========================================================================
+   Contenedor de Notificaciones Toast
+   ========================================================================== */
+.app-toast-container {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 400px;
+    width: calc(100vw - 3rem);
+    pointer-events: none;
+}
+
+.app-toast {
+    pointer-events: auto;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(15, 23, 42, 0.06);
+    padding: 0.875rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-left: 4px solid var(--legal-navy-800);
+    animation: toastSlideIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.app-toast.toast-exiting {
+    animation: toastSlideOut 0.2s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.app-toast.toast-success {
+    border-left-color: var(--status-success-dot);
+}
+.app-toast.toast-success .toast-icon {
+    color: var(--status-success-dot);
+    background: var(--status-success-bg);
+}
+
+.app-toast.toast-error {
+    border-left-color: var(--status-danger-dot);
+}
+.app-toast.toast-error .toast-icon {
+    color: var(--status-danger-dot);
+    background: var(--status-danger-bg);
+}
+
+.app-toast.toast-warning {
+    border-left-color: var(--status-warning-dot);
+}
+.app-toast.toast-warning .toast-icon {
+    color: var(--status-warning-dot);
+    background: var(--status-warning-bg);
+}
+
+.app-toast.toast-info {
+    border-left-color: var(--status-info-dot);
+}
+.app-toast.toast-info .toast-icon {
+    color: var(--status-info-dot);
+    background: var(--status-info-bg);
+}
+
+.toast-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.toast-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.toast-content {
+    flex: 1;
+    min-width: 0;
+}
+.toast-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--legal-slate-900);
+    margin-bottom: 0.15rem;
+}
+.toast-message {
+    font-size: 0.8125rem;
+    color: var(--legal-slate-600);
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.toast-close-btn {
+    background: transparent;
+    border: none;
+    color: var(--legal-slate-400);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.toast-close-btn:hover {
+    color: var(--legal-slate-700);
+    background: var(--legal-slate-100);
+}
+.toast-close-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+@keyframes toastSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(30px) scale(0.96);
+    }
+}
+
+/* ==========================================================================
+   Modales y Cuadros de Diálogo Corporativos (AppDialog)
+   ========================================================================== */
+.app-dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 29, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    animation: fadeIn 0.18s ease-out;
+}
+
+.app-dialog-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-modal);
+    border: 1px solid var(--legal-slate-200);
+    overflow: hidden;
+    animation: scaleIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.app-dialog-header {
+    padding: 1.25rem 1.5rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.app-dialog-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.app-dialog-icon.icon-danger {
+    background: var(--status-danger-bg);
+    color: var(--status-danger-dot);
+}
+.app-dialog-icon.icon-primary {
+    background: var(--legal-gold-100);
+    color: var(--legal-gold-600);
+}
+.app-dialog-icon.icon-warning {
+    background: var(--status-warning-bg);
+    color: var(--status-warning-dot);
+}
+.app-dialog-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.app-dialog-title-group {
+    flex: 1;
+}
+.app-dialog-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--legal-slate-900);
+    margin-bottom: 0.35rem;
+}
+.app-dialog-message {
+    font-size: 0.875rem;
+    color: var(--legal-slate-600);
+    line-height: 1.45;
+}
+
+.app-dialog-footer {
+    padding: 1rem 1.5rem;
+    background: var(--legal-slate-50);
+    border-top: 1px solid var(--legal-slate-200);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.btn-secondary-dialog {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--legal-slate-700);
+    background: #ffffff;
+    border: 1px solid var(--legal-slate-300);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+}
+.btn-secondary-dialog:hover {
+    background: var(--legal-slate-100);
+    border-color: var(--legal-slate-400);
+}
+
+.btn-primary-dialog {
+    padding: 0.5rem 1.15rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--legal-navy-900);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-primary-dialog:hover {
+    background: var(--legal-navy-800);
+}
+
+.btn-danger-dialog {
+    padding: 0.5rem 1.15rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--status-danger-dot);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-danger-dialog:hover {
+    background: #dc2626;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Command Palette (Paleta de Acciones Rápidas Ctrl+K)
+   ========================================================================== */
+.command-palette-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 29, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 10001;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+    animation: fadeIn 0.15s ease-out;
+}
+
+.command-palette-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 580px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-modal);
+    border: 1px solid var(--legal-slate-200);
+    overflow: hidden;
+    animation: scaleIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.command-search-box {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--legal-slate-200);
+    gap: 0.75rem;
+}
+.command-search-box svg {
+    width: 20px;
+    height: 20px;
+    color: var(--legal-slate-400);
+}
+.command-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--legal-slate-900);
+    font-family: var(--font-sans);
+}
+.command-kbd-badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    color: var(--legal-slate-500);
+    background: var(--legal-slate-100);
+    border: 1px solid var(--legal-slate-300);
+    border-radius: 4px;
+}
+
+.command-results-list {
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    list-style: none;
+    margin: 0;
+}
+.command-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--legal-slate-700);
+    font-size: 0.875rem;
+    transition: background 0.12s, color 0.12s;
+}
+.command-item:hover, .command-item.active {
+    background: var(--legal-slate-100);
+    color: var(--legal-navy-900);
+}
+.command-item-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--legal-slate-200);
+    color: var(--legal-slate-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.command-item:hover .command-item-icon, .command-item.active .command-item-icon {
+    background: var(--legal-gold-100);
+    color: var(--legal-gold-600);
+}
+.command-item-icon svg {
+    width: 16px;
+    height: 16px;
+}
+.command-item-title {
+    font-weight: 500;
+}
+.command-item-desc {
+    font-size: 0.75rem;
+    color: var(--legal-slate-400);
+    margin-left: auto;
+}
+
+.command-footer {
+    padding: 0.625rem 1.25rem;
+    background: var(--legal-slate-50);
+    border-top: 1px solid var(--legal-slate-200);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--legal-slate-500);
+}
+
+/* ==========================================================================
+   Badges Semánticos con Punto Indicador (Dot Status Badges)
+   ========================================================================== */
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1;
+    border: 1px solid transparent;
+}
+.badge-status .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.badge-status.status-confirmed, .badge-status.status-active, .badge-status.status-favorable {
+    background: var(--status-success-bg);
+    color: var(--status-success-text);
+    border-color: var(--status-success-border);
+}
+.badge-status.status-confirmed .status-dot, .badge-status.status-active .status-dot {
+    background: var(--status-success-dot);
+}
+
+.badge-status.status-pending, .badge-status.status-warning, .badge-status.status-due-soon {
+    background: var(--status-warning-bg);
+    color: var(--status-warning-text);
+    border-color: var(--status-warning-border);
+}
+.badge-status.status-pending .status-dot, .badge-status.status-due-soon .status-dot {
+    background: var(--status-warning-dot);
+}
+
+.badge-status.status-danger, .badge-status.status-critical, .badge-status.status-expired {
+    background: var(--status-danger-bg);
+    color: var(--status-danger-text);
+    border-color: var(--status-danger-border);
+}
+.badge-status.status-danger .status-dot, .badge-status.status-expired .status-dot {
+    background: var(--status-danger-dot);
+}
+
+.badge-status.status-scheduled, .badge-status.status-info {
+    background: var(--status-info-bg);
+    color: var(--status-info-text);
+    border-color: var(--status-info-border);
+}
+.badge-status.status-scheduled .status-dot {
+    background: var(--status-info-dot);
+}
+
+/* ==========================================================================
+   Estado Vacío Profesional (Enterprise Empty States)
+   ========================================================================== */
+.enterprise-empty-state {
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.empty-state-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: var(--legal-slate-100);
+    border: 1px solid var(--legal-slate-200);
+    color: var(--legal-slate-400);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+.empty-state-icon-box svg {
+    width: 32px;
+    height: 32px;
+}
+.empty-state-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--legal-slate-800);
+    margin-bottom: 0.35rem;
+}
+.empty-state-desc {
+    font-size: 0.875rem;
+    color: var(--legal-slate-500);
+    max-width: 380px;
+    margin-bottom: 1.25rem;
+    line-height: 1.45;
+}
+.empty-state-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.15rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: var(--legal-navy-900);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: background 0.15s, transform 0.1s;
+}
+.empty-state-btn:hover {
+    background: var(--legal-gold-600);
+    transform: translateY(-1px);
+}
+.empty-state-btn svg {
+    width: 16px;
+    height: 16px;
+}

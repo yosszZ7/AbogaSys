@@ -1,0 +1,759 @@
+/* ==========================================================================
+   AbogaSys - Estilos del Módulo Empleados / Personal
+   ========================================================================== */
+
+/* Badges de Estado Laboral */
+.labor-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.labor-pill::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.labor-pill.activo {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.labor-pill.activo::before {
+    background-color: #10b981;
+}
+
+.labor-pill.inactivo {
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid rgba(100, 116, 139, 0.25);
+}
+.labor-pill.inactivo::before {
+    background-color: #94a3b8;
+}
+
+.labor-pill.vacaciones {
+    background-color: #fffbeb;
+    color: #92400e;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+.labor-pill.vacaciones::before {
+    background-color: #f59e0b;
+}
+
+.labor-pill.suspendido {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+.labor-pill.suspendido::before {
+    background-color: #ef4444;
+}
+
+/* Badges de Cargo Laboral */
+.cargo-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.775rem;
+    font-weight: 600;
+    background-color: #f8fafc;
+    color: var(--primary, #0f172a);
+    border: 1px solid var(--border-color, #cbd5e1);
+}
+
+/* Badges de Cuenta de Usuario AbogaSys */
+.user-account-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.user-account-badge.has-account {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid rgba(29, 78, 216, 0.25);
+}
+
+.user-account-badge.no-account {
+    background-color: #f8fafc;
+    color: #64748b;
+    border: 1px dashed #cbd5e1;
+}
+
+.user-account-badge svg {
+    width: 13px;
+    height: 13px;
+}
+
+/* Celda de Empleado con Avatar de Iniciales */
+.employee-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.employee-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(197, 160, 89, 0.15);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    color: var(--accent, #c5a059);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.employee-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-name {
+    font-weight: 600;
+    color: var(--primary, #0f172a);
+    font-size: 0.885rem;
+    line-height: 1.3;
+}
+
+.employee-area-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted, #64748b);
+}
+
+/* Prefijo de Salario C$ */
+.input-with-prefix {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-prefix {
+    position: absolute;
+    left: 12px;
+    font-weight: 700;
+    color: var(--accent, #c5a059);
+    font-size: 0.875rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+.input-with-prefix .form-input {
+    padding-left: 36px;
+}
+
+/* ==========================================================================
+   Sección: Acceso a AbogaSys (Selector Sí / No)
+   ========================================================================== */
+.access-toggle-container {
+    background-color: #f8fafc;
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    padding: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.access-toggle-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.access-toggle-desc {
+    font-size: 0.8125rem;
+    color: var(--text-muted, #64748b);
+    margin-bottom: 1rem;
+    line-height: 1.45;
+}
+
+.access-options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.access-option-card {
+    border: 2px solid var(--border-color, #cbd5e1);
+    background-color: #ffffff;
+    border-radius: var(--radius-md, 8px);
+    padding: 1rem 1.15rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition, all 0.2s ease-in-out);
+    user-select: none;
+}
+
+.access-option-card input[type="radio"] {
+    accent-color: var(--accent, #c5a059);
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+}
+
+.access-option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.access-option-label {
+    font-size: 0.925rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+}
+
+.access-option-help {
+    font-size: 0.775rem;
+    color: var(--text-muted, #64748b);
+    line-height: 1.35;
+}
+
+.access-option-card:hover {
+    border-color: var(--accent, #c5a059);
+    background-color: #fffdfa;
+}
+
+.access-option-card.selected {
+    border-color: var(--accent, #c5a059);
+    background-color: rgba(197, 160, 89, 0.08);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+/* Panel Condicional de Usuario de AbogaSys */
+.user-account-panel {
+    background-color: #ffffff;
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    animation: fadeInPanel 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInPanel {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tarjeta Informativa de Roles y Permisos */
+.role-info-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.02) 0%, rgba(197, 160, 89, 0.08) 100%);
+    border: 1.5px solid rgba(197, 160, 89, 0.4);
+    border-radius: var(--radius-md, 8px);
+    padding: 1.15rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.role-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.role-info-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.role-info-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+}
+
+.badge-informative {
+    font-size: 0.685rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 2px 7px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+}
+
+.role-info-desc {
+    font-size: 0.8125rem;
+    color: var(--text-main, #1e293b);
+    line-height: 1.45;
+}
+
+.role-modules-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.role-module-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 3px 8px;
+    background-color: #ffffff;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary, #0f172a);
+}
+
+.role-module-tag svg {
+    width: 12px;
+    height: 12px;
+    color: var(--accent, #c5a059);
+}
+
+/* ==========================================================================
+   Sección: Documentación Laboral del Empleado
+   ========================================================================== */
+.docs-section-card {
+    background-color: #f8fafc;
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    padding: 1.25rem;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.doc-upload-item {
+    background-color: #ffffff;
+    border: 1.5px dashed var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    padding: 0.85rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.doc-upload-item:hover {
+    border-color: var(--accent, #c5a059);
+    background-color: #fffdfa;
+}
+
+.doc-upload-item.attached {
+    border-style: solid;
+    border-color: #cbd5e1;
+    background-color: #ffffff;
+}
+
+.doc-upload-info {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+}
+
+.doc-upload-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: rgba(197, 160, 89, 0.12);
+    color: var(--accent, #c5a059);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.doc-upload-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.doc-upload-labels {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.doc-upload-title {
+    font-size: 0.845rem;
+    font-weight: 600;
+    color: var(--primary, #0f172a);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.doc-upload-filename {
+    font-size: 0.725rem;
+    color: var(--text-muted, #64748b);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.btn-upload-file-sim {
+    height: 30px;
+    padding: 0 0.65rem;
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color, #cbd5e1);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-main, #1e293b);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: var(--transition, all 0.2s ease-in-out);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-upload-file-sim:hover {
+    border-color: var(--accent, #c5a059);
+    color: var(--accent, #c5a059);
+    background-color: rgba(197, 160, 89, 0.08);
+}
+
+.btn-upload-file-sim svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.btn-remove-doc-sim {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-remove-doc-sim:hover {
+    color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.btn-remove-doc-sim svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Modal de Consulta de Empleado (Ficha Detallada)
+   ========================================================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 150;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.employee-detail-modal {
+    background-color: #ffffff;
+    border-radius: var(--radius-lg, 14px);
+    width: 100%;
+    max-width: 760px;
+    max-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-color, #e2e8f0);
+    animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: auto;
+    overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    padding: 1.25rem 1.75rem;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    flex-shrink: 0;
+}
+
+.modal-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.modal-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    margin: 0;
+}
+
+.modal-subtitle {
+    font-size: 0.8125rem;
+    color: var(--text-muted, #64748b);
+    margin: 0;
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-close-modal:hover {
+    color: var(--primary, #0f172a);
+    background-color: #f1f5f9;
+}
+
+.btn-close-modal svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.modal-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+}
+
+.modal-footer {
+    padding: 1rem 1.75rem;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    background-color: #f8fafc;
+    border-radius: 0 0 14px 14px;
+    flex-shrink: 0;
+}
+
+.emp-view-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.emp-view-section-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1.5px solid #e2e8f0;
+    padding-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emp-view-section-title svg,
+.form-section-title svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent, #c5a059);
+    flex-shrink: 0;
+}
+
+/* Títulos de sección para formularios (registrar/editar empleado) */
+.form-section-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1.5px solid var(--border-color, #cbd5e1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.emp-view-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.emp-view-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.emp-view-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.emp-view-label {
+    font-size: 0.725rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: var(--text-muted, #64748b);
+}
+
+.emp-view-value {
+    font-size: 0.885rem;
+    font-weight: 500;
+    color: var(--text-main, #1e293b);
+}
+
+.emp-view-docs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.emp-view-doc-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.4rem 0.75rem;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    color: var(--primary, #0f172a);
+    font-weight: 500;
+}
+
+.emp-view-doc-chip svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent, #c5a059);
+}
+
+/* Botón Secundario / Cancelar */
+.btn-secondary {
+    height: 40px;
+    padding: 0 1.25rem;
+    background-color: #ffffff;
+    color: var(--text-main, #1e293b);
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-light, #f8fafc);
+    border-color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .access-options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .emp-view-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .emp-view-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-overlay {
+        padding: 0.75rem;
+    }
+
+    .employee-detail-modal {
+        max-height: calc(100vh - 1.5rem);
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}

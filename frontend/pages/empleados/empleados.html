@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AbogaSys - Directorio de personal, control de empleados y vinculación de cuentas de sistema en Nicaragua.">
+    <title>AbogaSys - Empleados</title>
+    <!-- Hojas de estilos del sistema y módulos -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/ui-core.css">
+    <link rel="stylesheet" href="../../css/usuarios.css">
+    <link rel="stylesheet" href="../../css/empleados.css">
+</head>
+<body class="dashboard-body-root">
+    <div class="dashboard-wrapper">
+        <!-- Overlay para móviles -->
+        <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+                                <!-- Menú Lateral Izquierdo (Sidebar) -->
+        <aside id="sidebar" class="sidebar" aria-label="Menú principal de navegación">
+            <div class="sidebar-header">
+                <a href="../dashboard.html" class="sidebar-brand">
+                    <div class="sidebar-logo" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="3" x2="12" y2="21"></line>
+                            <line x1="4" y1="7" x2="20" y2="7"></line>
+                            <polyline points="4 7 1 14 7 14 4 7"></polyline>
+                            <polyline points="20 7 17 14 23 14 20 7"></polyline>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="sidebar-brand-text">
+                        <span class="brand-title">Aboga<span>Sys</span></span>
+                        <span class="brand-sub">LegalTech OS</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Principal</div>
+
+                <a href="../dashboard.html" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Panel de Control</span>
+                </a>
+                <div class="nav-section-label">Gestión Legal</div>
+
+                <a href="../expedientes/expedientes.html" class="nav-item" data-permission="EXPEDIENTES_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <span>Expedientes</span>
+                </a>
+                <a href="../clientes/clientes.html" class="nav-item" data-permission="CLIENTES_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Clientes</span>
+                </a>
+                <a href="../agenda/agenda.html" class="nav-item" data-permission="AGENDA_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Agenda y Términos</span>
+                </a>
+                <a href="../documentos/documentos.html" class="nav-item" data-permission="DOCUMENTOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Bóveda Documental</span>
+                </a>
+                <div class="nav-section-label">Administración</div>
+
+                <a href="../empleados/empleados.html" class="nav-item active" aria-current="page" data-permission="EMPLEADOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><line x1="15" y1="8" x2="17" y2="8"></line><line x1="15" y1="12" x2="17" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+                    <span>Personal</span>
+                </a>
+                <a href="../usuarios/usuarios.html" class="nav-item" data-permission="USUARIOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>Usuarios y Permisos</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="javascript:void(0)" class="nav-item-logout" id="logout-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Encabezado Superior -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="header-title-group">
+                        <h1 class="header-page-title">Empleados</h1>
+                        <p class="header-welcome-text">Directorio de personal, información laboral y cuentas de sistema</p>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button type="button" class="header-action-btn" aria-label="Notificaciones del sistema">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="header-divider" aria-hidden="true"></div>
+
+                    <div class="user-profile">
+                        <div class="user-avatar" id="header-user-avatar" aria-hidden="true">RG</div>
+                        <div class="user-info">
+                            <span class="user-name" id="header-user-name">Lic. Roberto González</span>
+                            <span class="user-role" id="header-user-role">Administrador</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cuerpo del Módulo Empleados -->
+            <main class="dashboard-body">
+                <!-- Encabezado de Sección y Barra de Filtros -->
+                <section class="module-header">
+                    <div class="module-title-group">
+                        <h2>Personal del Despacho</h2>
+                        <p class="module-description">Gestiona el talento humano de la firma, condiciones laborales y accesos de usuario a la plataforma.</p>
+                    </div>
+
+                    <div class="module-toolbar">
+                        <!-- Buscador en tiempo real -->
+                        <div class="search-box">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input
+                                type="text"
+                                id="search-empleado"
+                                class="search-input"
+                                placeholder="Buscar por nombre, cédula, cargo o correo..."
+                                aria-label="Buscar empleados"
+                            >
+                        </div>
+
+                        <!-- Filtros combinados por Cargo y Estado Laboral -->
+                        <div class="filters-bar">
+                            <select id="filter-cargo" class="filter-select" aria-label="Filtrar por cargo">
+                                <option value="todos">Todos los cargos</option>
+                                <option value="Abogado">Abogado</option>
+                                <option value="Asistente legal">Asistente legal</option>
+                                <option value="Recepcionista">Recepcionista</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Contador">Contador</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+
+                            <select id="filter-estado" class="filter-select" aria-label="Filtrar por estado laboral">
+                                <option value="todos">Todos los estados</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                                <option value="Vacaciones">Vacaciones</option>
+                                <option value="Suspendido">Suspendido</option>
+                            </select>
+                        </div>
+
+                        <!-- Botón Registrar Empleado -->
+                        <a href="registrar-empleado.html" class="btn-primary" data-permission="EMPLEADOS_CREATE">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span>Registrar empleado</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Tabla de Empleados -->
+                <section class="table-card">
+                    <div class="table-responsive">
+                        <table class="data-table" id="empleados-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre y apellidos</th>
+                                    <th>Cédula</th>
+                                    <th>Cargo</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Estado laboral</th>
+                                    <th>Usuario AbogaSys</th>
+                                    <th style="text-align: right;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="empleados-table-body">
+                                <!-- Filas inyectadas por JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Modal: Ficha de Consulta Detallada del Empleado
+         ========================================================================== -->
+    <div id="modal-view-employee" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-view-title">
+        <div class="employee-detail-modal">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <h3 id="modal-view-title" class="modal-title">Ficha del Empleado</h3>
+                    <p class="modal-subtitle">Expediente laboral y configuración de acceso al sistema</p>
+                </div>
+                <button type="button" class="btn-close-modal" id="btn-close-view-modal" aria-label="Cerrar modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <div class="modal-body" id="modal-view-body">
+                <!-- Sección 1: Datos Personales -->
+                <div class="emp-view-section">
+                    <h4 class="emp-view-section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Datos Personales
+                    </h4>
+                    <div class="emp-view-grid-3">
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Nombre completo</span>
+                            <span class="emp-view-value" id="view-emp-name" style="font-weight: 700;">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Cédula de identidad</span>
+                            <span class="emp-view-value" id="view-emp-dni" style="font-family: monospace; font-weight: 600;">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Fecha de nacimiento</span>
+                            <span class="emp-view-value" id="view-emp-birthdate">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Sexo</span>
+                            <span class="emp-view-value" id="view-emp-gender">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Estado civil</span>
+                            <span class="emp-view-value" id="view-emp-civil">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Tipo de sangre</span>
+                            <span class="emp-view-value" id="view-emp-blood">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Teléfono de contacto</span>
+                            <span class="emp-view-value" id="view-emp-phone">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Correo electrónico</span>
+                            <span class="emp-view-value" id="view-emp-email">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Dirección domiciliar</span>
+                            <span class="emp-view-value" id="view-emp-address">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 2: Información Laboral -->
+                <div class="emp-view-section">
+                    <h4 class="emp-view-section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        Información Laboral
+                    </h4>
+                    <div class="emp-view-grid-3">
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Cargo asignado</span>
+                            <div><span class="cargo-badge" id="view-emp-cargo">-</span></div>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Área / Departamento</span>
+                            <span class="emp-view-value" id="view-emp-area">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Fecha de contratación</span>
+                            <span class="emp-view-value" id="view-emp-hiredate">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Número INSS</span>
+                            <span class="emp-view-value" id="view-emp-inss" style="font-family: monospace;">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Salario mensual</span>
+                            <span class="emp-view-value" id="view-emp-salary" style="font-weight: 700; color: #0f172a;">-</span>
+                        </div>
+                        <div class="emp-view-item">
+                            <span class="emp-view-label">Estado laboral</span>
+                            <div><span id="view-emp-status" class="labor-pill activo">-</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección 3: Documentación Laboral -->
+                <div class="emp-view-section">
+                    <h4 class="emp-view-section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                        Documentación del Empleado
+                    </h4>
+                    <div class="emp-view-docs-list" id="view-emp-docs-container">
+                        <!-- Chips de documentos inyectados por JS -->
+                    </div>
+                </div>
+
+                <!-- Sección 4: Acceso a AbogaSys y Rol del Sistema -->
+                <div class="emp-view-section">
+                    <h4 class="emp-view-section-title">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        Acceso al Sistema y Rol
+                    </h4>
+                    <div id="view-emp-access-container">
+                        <!-- Detalles de cuenta y rol inyectados por JS -->
+                    </div>
+                </div>
+            </div>
+
+            <footer class="modal-footer">
+                <button type="button" class="btn-secondary" id="btn-close-view-modal-footer">Cerrar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toast Feedback -->
+    <div id="toast-feedback" class="toast-feedback" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span id="toast-message">Mensaje del sistema</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/ui-core.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/permissions.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/empleados/empleados.js"></script>
+</body>
+</html>
+

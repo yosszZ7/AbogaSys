@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AbogaSys - Repositorio jurídico, control documental y clasificación de piezas procesales en Nicaragua.">
+    <title>AbogaSys - Documentos</title>
+    <!-- Hojas de estilos del sistema y módulos -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/ui-core.css">
+    <link rel="stylesheet" href="../../css/usuarios.css">
+    <link rel="stylesheet" href="../../css/documentos.css">
+</head>
+<body class="dashboard-body-root">
+    <div class="dashboard-wrapper">
+        <!-- Overlay para móviles -->
+        <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+                                <!-- Menú Lateral Izquierdo (Sidebar) -->
+        <aside id="sidebar" class="sidebar" aria-label="Menú principal de navegación">
+            <div class="sidebar-header">
+                <a href="../dashboard.html" class="sidebar-brand">
+                    <div class="sidebar-logo" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="3" x2="12" y2="21"></line>
+                            <line x1="4" y1="7" x2="20" y2="7"></line>
+                            <polyline points="4 7 1 14 7 14 4 7"></polyline>
+                            <polyline points="20 7 17 14 23 14 20 7"></polyline>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="sidebar-brand-text">
+                        <span class="brand-title">Aboga<span>Sys</span></span>
+                        <span class="brand-sub">LegalTech OS</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Principal</div>
+
+                <a href="../dashboard.html" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Panel de Control</span>
+                </a>
+                <div class="nav-section-label">Gestión Legal</div>
+
+                <a href="../expedientes/expedientes.html" class="nav-item" data-permission="EXPEDIENTES_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <span>Expedientes</span>
+                </a>
+                <a href="../clientes/clientes.html" class="nav-item" data-permission="CLIENTES_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Clientes</span>
+                </a>
+                <a href="../agenda/agenda.html" class="nav-item" data-permission="AGENDA_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Agenda y Términos</span>
+                </a>
+                <a href="../documentos/documentos.html" class="nav-item active" aria-current="page" data-permission="DOCUMENTOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Bóveda Documental</span>
+                </a>
+                <div class="nav-section-label">Administración</div>
+
+                <a href="../empleados/empleados.html" class="nav-item" data-permission="EMPLEADOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><line x1="15" y1="8" x2="17" y2="8"></line><line x1="15" y1="12" x2="17" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+                    <span>Personal</span>
+                </a>
+                <a href="../usuarios/usuarios.html" class="nav-item" data-permission="USUARIOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>Usuarios y Permisos</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="javascript:void(0)" class="nav-item-logout" id="logout-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Encabezado Superior -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="header-title-group">
+                        <h1 class="header-page-title">Documentos</h1>
+                        <p class="header-welcome-text">Gestión, clasificación y repositorio digital de piezas procesales</p>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button type="button" class="header-action-btn" aria-label="Notificaciones del sistema">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="header-divider" aria-hidden="true"></div>
+
+                    <div class="user-profile">
+                        <div class="user-avatar" id="header-user-avatar" aria-hidden="true">RG</div>
+                        <div class="user-info">
+                            <span class="user-name" id="header-user-name">Lic. Roberto González</span>
+                            <span class="user-role" id="header-user-role">Administrador</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cuerpo del Módulo Documentos -->
+            <main class="dashboard-body">
+                <!-- Encabezado de Sección y Barra de Filtros -->
+                <section class="module-header">
+                    <div class="module-title-group">
+                        <h2>Documentos</h2>
+                        <p class="module-description">Administra y consulta escritos, sentencias, contratos y anexos probatorios vinculados a causas judiciales.</p>
+                    </div>
+
+                    <div class="module-toolbar">
+                        <!-- Buscador en tiempo real -->
+                        <div class="search-box">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input
+                                type="text"
+                                id="search-document"
+                                class="search-input"
+                                placeholder="Buscar por documento, exp, cliente o responsable..."
+                                aria-label="Buscar documentos"
+                            >
+                        </div>
+
+                        <!-- Filtros combinados por Tipo de Documento y Expediente -->
+                        <div class="filters-bar">
+                            <select id="filter-type" class="filter-select" aria-label="Filtrar por tipo de documento">
+                                <option value="todos">Todos los tipos</option>
+                            </select>
+
+                            <select id="filter-expediente" class="filter-select" aria-label="Filtrar por expediente">
+                                <option value="todos">Todos los expedientes</option>
+                            </select>
+                        </div>
+
+                        <!-- Botón Registrar Documento -->
+                        <button type="button" id="btn-open-register-modal" class="btn-primary" data-permission="DOCUMENTOS_CREATE">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span>Registrar documento</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Tabla de Documentos -->
+                <section class="table-card">
+                    <div class="table-responsive">
+                        <table class="data-table" id="documents-table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre del documento</th>
+                                    <th>Tipo</th>
+                                    <th>Expediente</th>
+                                    <th>Cliente</th>
+                                    <th>Fecha del documento</th>
+                                    <th>Registrado por</th>
+                                    <th style="text-align: right;">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="documents-table-body">
+                                <!-- Filas inyectadas dinámicamente por JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Modal: Registrar Documento
+         ========================================================================== -->
+    <div id="modal-register-document" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-register-title">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <h3 id="modal-register-title" class="modal-title">Registrar Documento</h3>
+                    <p class="modal-subtitle">Asocia una pieza procesal al expediente judicial y su cliente</p>
+                </div>
+                <button type="button" class="modal-close-btn" id="btn-close-register-modal" aria-label="Cerrar modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <form id="form-register-document" novalidate>
+                <div class="modal-body">
+                    <!-- Información General -->
+                    <div class="form-grid-2">
+                        <!-- Nombre del documento (obligatorio) -->
+                        <div class="form-group full-width">
+                            <label for="reg-doc-name" class="form-label">
+                                Nombre del documento <span class="required-mark">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="reg-doc-name"
+                                class="form-input"
+                                placeholder="Ej. Demanda Ordinaria de Arrendamiento y Cobro de Cánones"
+                                required
+                            >
+                            <span class="field-error-msg" id="reg-doc-name-error">El nombre del documento es obligatorio.</span>
+                        </div>
+
+                        <!-- Tipo de documento (obligatorio) -->
+                        <div class="form-group">
+                            <label for="reg-doc-type" class="form-label">
+                                Tipo de documento <span class="required-mark">*</span>
+                            </label>
+                            <select id="reg-doc-type" class="form-select" required>
+                                <option value="">Seleccionar tipo...</option>
+                            </select>
+                            <span class="field-error-msg" id="reg-doc-type-error">Seleccione el tipo de documento.</span>
+                        </div>
+
+                        <!-- Fecha del documento -->
+                        <div class="form-group">
+                            <label for="reg-doc-date" class="form-label">
+                                Fecha del documento <span class="required-mark">*</span>
+                            </label>
+                            <input
+                                type="date"
+                                id="reg-doc-date"
+                                class="form-input"
+                                required
+                            >
+                        </div>
+
+                        <!-- Expediente relacionado (obligatorio) -->
+                        <div class="form-group">
+                            <label for="reg-doc-expediente" class="form-label">
+                                Expediente relacionado <span class="required-mark">*</span>
+                            </label>
+                            <select id="reg-doc-expediente" class="form-select" required>
+                                <option value="">Seleccionar expediente...</option>
+                            </select>
+                            <span class="field-error-msg" id="reg-doc-expediente-error">Debe seleccionar un expediente judicial.</span>
+                        </div>
+
+                        <!-- Cliente asociado (automático y bloqueado) -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                Cliente asociado
+                            </label>
+                            <div class="client-autolink-box" id="reg-client-box">
+                                <div class="client-autolink-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>
+                                </div>
+                                <span class="client-autolink-name" id="reg-client-name">Seleccione un expediente para vincular</span>
+                                <span class="client-autolink-badge">Automático</span>
+                            </div>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="form-group full-width">
+                            <label for="reg-doc-desc" class="form-label">
+                                Descripción o resumen del contenido
+                            </label>
+                            <textarea
+                                id="reg-doc-desc"
+                                class="form-textarea"
+                                rows="3"
+                                placeholder="Indique pretensiones principales, partes involucradas, número de folios o notas relevantes..."
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Zona de Archivo (Dropzone) - Obligatorio, max 10MB, .pdf, .doc, .docx -->
+                    <div class="dropzone-container">
+                        <label class="form-label">
+                            Archivo digital adjunto <span class="required-mark">*</span>
+                        </label>
+
+                        <div class="file-dropzone" id="reg-dropzone" tabindex="0" role="button" aria-label="Zona para arrastrar o seleccionar archivo digital">
+                            <div class="dropzone-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <p class="dropzone-text-main">
+                                Arrastra tu documento aquí o <span>haz clic para explorar</span>
+                            </p>
+                            <p class="dropzone-text-sub">
+                                Formatos admitidos: <strong>PDF, DOC, DOCX</strong> (Tamaño máximo: <strong>10 MB</strong>)
+                            </p>
+                            <input
+                                type="file"
+                                id="reg-file-input"
+                                class="dropzone-file-input"
+                                accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            >
+                        </div>
+
+                        <!-- Tarjeta de archivo seleccionado (oculta inicialmente) -->
+                        <div class="selected-file-card" id="reg-selected-file-card" style="display: none;">
+                            <div class="selected-file-info">
+                                <div class="selected-file-icon pdf" id="reg-file-icon-box" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                    </svg>
+                                </div>
+                                <div style="display: flex; flex-direction: column; min-width: 0;">
+                                    <span class="selected-file-name" id="reg-selected-file-name">archivo.pdf</span>
+                                    <span class="selected-file-size" id="reg-selected-file-size">0 KB</span>
+                                </div>
+                            </div>
+                            <button type="button" class="btn-remove-file" id="btn-reg-remove-file" title="Quitar archivo seleccionado" aria-label="Quitar archivo">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <span class="field-error-msg" id="reg-file-error">
+                            Debe adjuntar un archivo obligatorio (.pdf, .doc, .docx hasta 10 MB).
+                        </span>
+                    </div>
+                </div>
+
+                <footer class="modal-footer">
+                    <button type="button" class="btn-secondary" id="btn-cancel-register-modal">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="btn-submit-register">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Guardar documento</span>
+                    </button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Modal: Consultar Documento (Ficha Detallada)
+         ========================================================================== -->
+    <div id="modal-view-document" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-view-title">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <h3 id="modal-view-title" class="modal-title">Ficha del Documento</h3>
+                    <p class="modal-subtitle">Detalles jurídicos, metadatos y estado del archivo digital</p>
+                </div>
+                <button type="button" class="modal-close-btn" id="btn-close-view-modal" aria-label="Cerrar modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <div class="modal-body" id="modal-view-content">
+                <!-- Metadatos estructurados -->
+                <div class="view-doc-grid">
+                    <div class="view-doc-item full-width">
+                        <span class="view-doc-label">Nombre del documento</span>
+                        <span class="view-doc-value" id="view-doc-name" style="font-weight: 700; font-size: 1.05rem; color: var(--primary, #0f172a);">-</span>
+                    </div>
+
+                    <div class="view-doc-item">
+                        <span class="view-doc-label">Tipo de documento</span>
+                        <div><span id="view-doc-type" class="doc-type-badge">-</span></div>
+                    </div>
+
+                    <div class="view-doc-item">
+                        <span class="view-doc-label">Expediente judicial</span>
+                        <div><span id="view-doc-expediente" class="expediente-badge">-</span></div>
+                    </div>
+
+                    <div class="view-doc-item">
+                        <span class="view-doc-label">Cliente vinculado</span>
+                        <span class="view-doc-value" id="view-doc-client" style="font-weight: 600;">-</span>
+                    </div>
+
+                    <div class="view-doc-item">
+                        <span class="view-doc-label">Fecha del documento</span>
+                        <span class="view-doc-value" id="view-doc-date">-</span>
+                    </div>
+
+                    <div class="view-doc-item">
+                        <span class="view-doc-label">Fecha de registro en sistema</span>
+                        <span class="view-doc-value" id="view-doc-created-at">-</span>
+                    </div>
+
+                    <div class="view-doc-item">
+                        <span class="view-doc-label">Registrado por</span>
+                        <span class="view-doc-value" id="view-doc-author">-</span>
+                    </div>
+
+                    <div class="view-doc-item full-width">
+                        <span class="view-doc-label">Descripción procesal</span>
+                        <div class="view-doc-desc-box" id="view-doc-desc">Sin descripción registrada.</div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Archivo Adjunto con Botón Descargar -->
+                <div class="view-file-card">
+                    <div class="view-file-main">
+                        <div class="selected-file-icon pdf" id="view-file-icon-box" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <div class="view-file-meta">
+                            <span class="view-file-title" id="view-file-name">archivo.pdf</span>
+                            <span class="view-file-sub" id="view-file-size">0 KB</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-download-doc" id="btn-view-modal-download" title="Descargar documento">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Descargar</span>
+                    </button>
+                </div>
+
+                <!-- Sección: Análisis con Inteligencia Artificial -->
+                <div class="ai-section-card">
+                    <div class="ai-header-row">
+                        <div class="ai-title-group">
+                            <div class="ai-icon-sparkle" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <h4 class="ai-title">Análisis con Inteligencia Artificial</h4>
+                            <span class="badge-ia">IA</span>
+                        </div>
+                        <span class="badge-ia-coming-soon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Próximamente
+                        </span>
+                    </div>
+
+                    <p class="ai-message">
+                        El análisis inteligente de documentos estará disponible próximamente. Podrás extraer hechos clave, detectar contradicciones procesales y contrastar antecedentes normativos automáticamente.
+                    </p>
+
+                    <div class="ai-capabilities-list">
+                        <div class="ai-capability-chip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Extracción de pretensiones</span>
+                        </div>
+                        <div class="ai-capability-chip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Detección de plazos legales</span>
+                        </div>
+                        <div class="ai-capability-chip">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Resumen de antecedentes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="modal-footer">
+                <button type="button" class="btn-primary" id="btn-close-view-modal-footer">Cerrar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Modal: Editar Documento (Solo Metadatos)
+         ========================================================================== -->
+    <div id="modal-edit-document" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-edit-title">
+        <div class="modal-dialog">
+            <header class="modal-header">
+                <div class="modal-title-group">
+                    <h3 id="modal-edit-title" class="modal-title">Editar Información del Documento</h3>
+                    <p class="modal-subtitle">Actualiza los metadatos y la vinculación con el expediente judicial</p>
+                </div>
+                <button type="button" class="modal-close-btn" id="btn-close-edit-modal" aria-label="Cerrar modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <form id="form-edit-document" novalidate>
+                <input type="hidden" id="edit-doc-id">
+
+                <div class="modal-body">
+                    <div class="form-grid-2">
+                        <!-- Nombre del documento -->
+                        <div class="form-group full-width">
+                            <label for="edit-doc-name" class="form-label">
+                                Nombre del documento <span class="required-mark">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="edit-doc-name"
+                                class="form-input"
+                                required
+                            >
+                            <span class="field-error-msg" id="edit-doc-name-error">El nombre del documento es obligatorio.</span>
+                        </div>
+
+                        <!-- Tipo de documento -->
+                        <div class="form-group">
+                            <label for="edit-doc-type" class="form-label">
+                                Tipo de documento <span class="required-mark">*</span>
+                            </label>
+                            <select id="edit-doc-type" class="form-select" required>
+                                <option value="">Seleccionar tipo...</option>
+                            </select>
+                            <span class="field-error-msg" id="edit-doc-type-error">Seleccione un tipo de documento.</span>
+                        </div>
+
+                        <!-- Fecha del documento -->
+                        <div class="form-group">
+                            <label for="edit-doc-date" class="form-label">
+                                Fecha del documento <span class="required-mark">*</span>
+                            </label>
+                            <input
+                                type="date"
+                                id="edit-doc-date"
+                                class="form-input"
+                                required
+                            >
+                        </div>
+
+                        <!-- Expediente relacionado -->
+                        <div class="form-group">
+                            <label for="edit-doc-expediente" class="form-label">
+                                Expediente relacionado <span class="required-mark">*</span>
+                            </label>
+                            <select id="edit-doc-expediente" class="form-select" required>
+                                <option value="">Seleccionar expediente...</option>
+                            </select>
+                            <span class="field-error-msg" id="edit-doc-expediente-error">Debe seleccionar un expediente.</span>
+                        </div>
+
+                        <!-- Cliente asociado (actualizado automáticamente al cambiar expediente) -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                Cliente asociado (vinculado al expediente)
+                            </label>
+                            <div class="client-autolink-box" id="edit-client-box">
+                                <div class="client-autolink-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                    </svg>
+                                </div>
+                                <span class="client-autolink-name" id="edit-client-name">-</span>
+                                <span class="client-autolink-badge">Automático</span>
+                            </div>
+                        </div>
+
+                        <!-- Descripción -->
+                        <div class="form-group full-width">
+                            <label for="edit-doc-desc" class="form-label">
+                                Descripción o resumen del contenido
+                            </label>
+                            <textarea
+                                id="edit-doc-desc"
+                                class="form-textarea"
+                                rows="3"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Información del archivo adjunto existente (Solo lectura) -->
+                    <div class="view-file-card" style="background-color: #f8fafc;">
+                        <div class="view-file-main">
+                            <div class="selected-file-icon pdf" id="edit-file-icon-box" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                </svg>
+                            </div>
+                            <div class="view-file-meta">
+                                <span class="view-file-title" id="edit-file-name">archivo.pdf</span>
+                                <span class="view-file-sub" id="edit-file-note">Archivo adjunto actual (la sustitución de archivos estará disponible próximamente)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="modal-footer">
+                    <button type="button" class="btn-secondary" id="btn-cancel-edit-modal">Cancelar</button>
+                    <button type="submit" class="btn-primary" id="btn-submit-edit">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Guardar cambios</span>
+                    </button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Modal: Asistente IA (Análisis de Documento)
+         ========================================================================== -->
+    <div id="modal-ia-analysis" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-ia-title">
+        <div class="modal-dialog" style="max-width: 800px;">
+            <header class="modal-header" style="background: linear-gradient(135deg, #4f46e5, #3b82f6); color: white;">
+                <div class="modal-title-group">
+                    <h3 id="modal-ia-title" class="modal-title" style="color: white; display: flex; align-items: center; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                        Análisis de Documento con IA
+                    </h3>
+                    <p class="modal-subtitle" style="color: #e0e7ff;">Extracción inteligente de datos jurídicos</p>
+                </div>
+                <button type="button" class="modal-close-btn" id="btn-close-ia-modal" aria-label="Cerrar modal" style="color: white;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+            
+            <div class="modal-body" style="background-color: #f8fafc; max-height: 60vh; overflow-y: auto;">
+                <div id="ia-warning-partial" style="display: none; background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+                    <strong>Atención:</strong> El documento es demasiado largo. El análisis se ha realizado únicamente sobre las primeras páginas.
+                </div>
+                
+                <div id="ia-warning-general" style="background-color: #e0e7ff; border-left: 4px solid #4f46e5; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+                    <strong>Nota:</strong> La IA puede cometer errores. Por favor, verifique la información contra el documento antes de utilizarla. Los datos extraídos no se guardan automáticamente.
+                </div>
+
+                <div id="ia-results-container">
+                    <!-- Los resultados se inyectarán aquí dinámicamente -->
+                    <div style="text-align: center; padding: 40px; color: #64748b;">
+                        Generando análisis... <br> (Esto puede tomar unos segundos)
+                    </div>
+                </div>
+            </div>
+
+            <footer class="modal-footer">
+                <button type="button" class="btn-secondary" id="btn-cancel-ia-modal">Cerrar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         Notificación Toast Feedback
+         ========================================================================== -->
+    <div id="toast-feedback" class="toast-feedback" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="toast-icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span id="toast-message">Mensaje del sistema</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/ui-core.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/permissions.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/documentos/documentos.js"></script>
+</body>
+</html>
+

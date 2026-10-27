@@ -1,0 +1,316 @@
+/* ==========================================================================
+   AbogaSys - Estilos del Módulo Clientes
+   ========================================================================== */
+
+/* Badges de Tipo de Cliente */
+.type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.type-badge.natural {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.type-badge.juridica {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid rgba(217, 119, 6, 0.25);
+}
+
+.id-badge {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--primary, #0f172a);
+    background-color: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+}
+
+/* Selector de Tipo de Cliente en Registro */
+.client-type-selector {
+    background-color: #f8fafc;
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.client-type-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.client-type-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.client-type-card {
+    border: 2px solid var(--border-color, #cbd5e1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition, all 0.2s ease-in-out);
+    user-select: none;
+}
+
+.client-type-card input[type="radio"] {
+    accent-color: var(--accent, #c5a059);
+    width: 18px;
+    height: 18px;
+}
+
+.client-type-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-type-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary, #0f172a);
+}
+
+.client-type-desc {
+    font-size: 0.775rem;
+    color: var(--text-muted, #64748b);
+}
+
+.client-type-card:hover {
+    border-color: var(--accent, #c5a059);
+    background-color: #fffdfa;
+}
+
+.client-type-card.selected {
+    border-color: var(--accent, #c5a059);
+    background-color: rgba(197, 160, 89, 0.08);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+/* Tipo Bloqueado en Edición */
+.locked-type-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color, #cbd5e1);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.locked-type-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.locked-type-note {
+    font-size: 0.775rem;
+    color: var(--text-muted, #64748b);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Secciones de Formulario */
+.form-section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    border-bottom: 1.5px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-section-title svg {
+    width: 18px;
+    height: 18px;
+    color: var(--accent, #c5a059);
+}
+
+.form-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.form-textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 10px 14px;
+    font-size: 0.925rem;
+    font-family: inherit;
+    color: var(--text-main, #1e293b);
+    background-color: var(--surface-white, #ffffff);
+    border: 1.5px solid var(--border-color, #cbd5e1);
+    border-radius: var(--radius-md, 8px);
+    outline: none;
+    resize: vertical;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.form-textarea:focus {
+    border-color: var(--accent, #c5a059);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+/* Modal de Consulta de Cliente */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 150;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.client-detail-modal {
+    background-color: #ffffff;
+    border-radius: var(--radius-lg, 14px);
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.modal-header {
+    padding: 1.25rem 1.75rem;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary, #0f172a);
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition, all 0.2s ease-in-out);
+}
+
+.btn-close-modal:hover {
+    color: var(--primary, #0f172a);
+    background-color: #f1f5f9;
+}
+
+.btn-close-modal svg {
+    width: 22px;
+    height: 22px;
+}
+
+.modal-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.detail-item.full-width {
+    grid-column: span 2;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted, #64748b);
+}
+
+.detail-value {
+    font-size: 0.925rem;
+    color: var(--text-main, #1e293b);
+    font-weight: 500;
+}
+
+.modal-footer {
+    padding: 1rem 1.75rem;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f8fafc;
+    border-radius: 0 0 14px 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .client-type-options {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-item.full-width {
+        grid-column: span 1;
+    }
+
+    .locked-type-indicator {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

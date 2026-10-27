@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AbogaSys - Gestión procesal y control integral de expedientes judiciales.">
+    <title>AbogaSys - Expedientes</title>
+    <!-- Hojas de estilos del sistema y módulos -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/ui-core.css">
+    <link rel="stylesheet" href="../../css/usuarios.css">
+    <link rel="stylesheet" href="../../css/clientes.css">
+    <link rel="stylesheet" href="../../css/expedientes.css">
+</head>
+<body class="dashboard-body-root">
+    <div class="dashboard-wrapper">
+        <!-- Overlay para móviles -->
+        <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+                                <!-- Menú Lateral Izquierdo (Sidebar) -->
+        <aside id="sidebar" class="sidebar" aria-label="Menú principal de navegación">
+            <div class="sidebar-header">
+                <a href="../dashboard.html" class="sidebar-brand">
+                    <div class="sidebar-logo" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="3" x2="12" y2="21"></line>
+                            <line x1="4" y1="7" x2="20" y2="7"></line>
+                            <polyline points="4 7 1 14 7 14 4 7"></polyline>
+                            <polyline points="20 7 17 14 23 14 20 7"></polyline>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="sidebar-brand-text">
+                        <span class="brand-title">Aboga<span>Sys</span></span>
+                        <span class="brand-sub">LegalTech OS</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">Principal</div>
+
+                <a href="../dashboard.html" class="nav-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Panel de Control</span>
+                </a>
+                <div class="nav-section-label">Gestión Legal</div>
+
+                <a href="../expedientes/expedientes.html" class="nav-item active" aria-current="page" data-permission="EXPEDIENTES_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    <span>Expedientes</span>
+                </a>
+                <a href="../clientes/clientes.html" class="nav-item" data-permission="CLIENTES_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    <span>Clientes</span>
+                </a>
+                <a href="../agenda/agenda.html" class="nav-item" data-permission="AGENDA_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>Agenda y Términos</span>
+                </a>
+                <a href="../documentos/documentos.html" class="nav-item" data-permission="DOCUMENTOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    <span>Bóveda Documental</span>
+                </a>
+                <div class="nav-section-label">Administración</div>
+
+                <a href="../empleados/empleados.html" class="nav-item" data-permission="EMPLEADOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="9" cy="10" r="2"></circle><line x1="15" y1="8" x2="17" y2="8"></line><line x1="15" y1="12" x2="17" y2="12"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+                    <span>Personal</span>
+                </a>
+                <a href="../usuarios/usuarios.html" class="nav-item" data-permission="USUARIOS_VIEW">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <span>Usuarios y Permisos</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="javascript:void(0)" class="nav-item-logout" id="logout-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                    <span>Cerrar sesión</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Encabezado Superior -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button id="sidebar-toggle-btn" class="sidebar-toggle-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="header-title-group">
+                        <h1 class="header-page-title">Expedientes</h1>
+                        <p class="header-welcome-text">Control y seguimiento procesal de causas judiciales</p>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <button type="button" class="header-action-btn" aria-label="Notificaciones del sistema">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="header-divider" aria-hidden="true"></div>
+
+                    <div class="user-profile">
+                        <div class="user-avatar" id="header-user-avatar" aria-hidden="true">RG</div>
+                        <div class="user-info">
+                            <span class="user-name" id="header-user-name">Lic. Roberto González</span>
+                            <span class="user-role" id="header-user-role">Administrador</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cuerpo del Módulo Expedientes -->
+            <main class="dashboard-body">
+                <!-- Encabezado de Sección y Barra de Filtros -->
+                <section class="module-header">
+                    <div class="module-title-group">
+                        <h2>Expedientes Judiciales</h2>
+                        <p class="module-description">Administra litigios, materias procesales, tribunales asignados y estado de tramitación.</p>
+                    </div>
+
+                    <div class="module-toolbar">
+                        <!-- Buscador en tiempo real -->
+                        <div class="search-box">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                            <input
+                                type="text"
+                                id="search-expediente"
+                                class="search-input"
+                                placeholder="Buscar por exp, cliente, juzgado o abogado..."
+                                aria-label="Buscar expedientes"
+                            >
+                        </div>
+
+                        <!-- Filtros combinados por Estado y Materia -->
+                        <div class="filters-bar">
+                            <select id="filter-status" class="filter-select" aria-label="Filtrar por estado">
+                                <option value="todos">Todos los estados</option>
+                                <option value="abierto">Abierto</option>
+                                <option value="en proceso">En proceso</option>
+                                <option value="suspendido">Suspendido</option>
+                                <option value="cerrado">Cerrado</option>
+                                <option value="archivado">Archivado</option>
+                            </select>
+
+                            <select id="filter-materia" class="filter-select" aria-label="Filtrar por materia">
+                                <option value="todas">Todas las materias</option>
+                                <option value="civil">Civil</option>
+                                <option value="penal">Penal</option>
+                                <option value="laboral">Laboral</option>
+                                <option value="familia">Familia</option>
+                                <option value="mercantil">Mercantil</option>
+                                <option value="administrativo">Administrativo</option>
+                                <option value="otra">Otra</option>
+                            </select>
+                        </div>
+
+                        <!-- Botón Registrar Expediente -->
+                        <a href="registrar-expediente.html" class="btn-primary" data-permission="EXPEDIENTES_CREATE">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span>Registrar expediente</span>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Tabla de Expedientes -->
+                <section class="table-card">
+                    <div class="table-responsive">
+                        <table class="data-table" id="expedientes-table">
+                            <thead>
+                                <tr>
+                                    <th>Nº de Expediente</th>
+                                    <th>Cliente</th>
+                                    <th>Materia</th>
+                                    <th>Tipo de proceso</th>
+                                    <th>Juzgado</th>
+                                    <th>Abogado responsable</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Fila 1 -->
+                                <tr data-status="en proceso" data-materia="civil">
+                                    <td><span class="expediente-badge exp-number">EXP-2026/089</span></td>
+                                    <td><strong class="client-name">Carlos Eduardo Pérez</strong></td>
+                                    <td><span class="materia-badge">Civil</span></td>
+                                    <td>Juicio Ordinario de Arrendamiento</td>
+                                    <td><span class="court-text">Juzgado de Distrito Civil de Managua</span></td>
+                                    <td><span class="lawyer-text">Lic. Roberto González</span></td>
+                                    <td><span class="status-pill en-proceso">En proceso</span></td>
+                                    <td><span style="color: #b45309; font-weight: 600;">22 Sep 2026, 10:00 AM</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-action btn-view-docket" data-id="EXP-2026/089" title="Consultar expediente" aria-label="Consultar EXP-2026/089">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <a href="editar-expediente.html" class="btn-action edit" title="Editar expediente" aria-label="Editar EXP-2026/089">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Fila 2 -->
+                                <tr data-status="en proceso" data-materia="laboral">
+                                    <td><span class="expediente-badge exp-number">EXP-2026/104</span></td>
+                                    <td><strong class="client-name">Ana Sofía González</strong></td>
+                                    <td><span class="materia-badge">Laboral</span></td>
+                                    <td>Reclamo de Prestaciones Sociales</td>
+                                    <td><span class="court-text">Juzgado de Distrito del Trabajo y de la Seguridad Social de Managua</span></td>
+                                    <td><span class="lawyer-text">Lic. Carlos Rivas</span></td>
+                                    <td><span class="status-pill en-proceso">En proceso</span></td>
+                                    <td><span style="color: #2563eb; font-weight: 600;">24 Sep 2026, 11:30 AM</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-action btn-view-docket" data-id="EXP-2026/104" title="Consultar expediente" aria-label="Consultar EXP-2026/104">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <a href="editar-expediente.html" class="btn-action edit" title="Editar expediente" aria-label="Editar EXP-2026/104">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Fila 3 -->
+                                <tr data-status="abierto" data-materia="mercantil">
+                                    <td><span class="expediente-badge exp-number">EXP-2026/042</span></td>
+                                    <td><strong class="client-name">Inversiones del Pacífico, S.A.</strong></td>
+                                    <td><span class="materia-badge">Mercantil</span></td>
+                                    <td>Ejecución de Título Valor</td>
+                                    <td><span class="court-text">Juzgado Local Civil de Managua</span></td>
+                                    <td><span class="lawyer-text">Lic. Roberto González</span></td>
+                                    <td><span class="status-pill abierto">Abierto</span></td>
+                                    <td><span style="color: #b45309; font-weight: 600;">28 Sep 2026, 09:15 AM</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-action btn-view-docket" data-id="EXP-2026/042" title="Consultar expediente" aria-label="Consultar EXP-2026/042">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <a href="editar-expediente.html" class="btn-action edit" title="Editar expediente" aria-label="Editar EXP-2026/042">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Fila 4 -->
+                                <tr data-status="suspendido" data-materia="familia">
+                                    <td><span class="expediente-badge exp-number">EXP-2026/115</span></td>
+                                    <td><strong class="client-name">María Fernanda López</strong></td>
+                                    <td><span class="materia-badge">Familia</span></td>
+                                    <td>Partición de Bienes Sucesorios</td>
+                                    <td><span class="court-text">Juzgado de Distrito de Familia de Managua</span></td>
+                                    <td><span class="lawyer-text">Licda. Sofía Méndez</span></td>
+                                    <td><span class="status-pill suspendido">Suspendido</span></td>
+                                    <td><span style="color: #64748b;">02 Oct 2026, 12:00 PM</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-action btn-view-docket" data-id="EXP-2026/115" title="Consultar expediente" aria-label="Consultar EXP-2026/115">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <a href="editar-expediente.html" class="btn-action edit" title="Editar expediente" aria-label="Editar EXP-2026/115">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <!-- Fila 5 -->
+                                <tr data-status="cerrado" data-materia="administrativo">
+                                    <td><span class="expediente-badge exp-number">EXP-2025/320</span></td>
+                                    <td><strong class="client-name">Comercializadora Xolotlán, S.A.</strong></td>
+                                    <td><span class="materia-badge">Administrativo</span></td>
+                                    <td>Recurso Contencioso Administrativo</td>
+                                    <td><span class="court-text">Tribunal de Apelaciones de Managua</span></td>
+                                    <td><span class="lawyer-text">Lic. Carlos Rivas</span></td>
+                                    <td><span class="status-pill cerrado">Cerrado</span></td>
+                                    <td><span style="color: #64748b;">-</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button type="button" class="btn-action btn-view-docket" data-id="EXP-2025/320" title="Consultar expediente" aria-label="Consultar EXP-2025/320">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                                    <circle cx="12" cy="12" r="3"></circle>
+                                                </svg>
+                                            </button>
+                                            <a href="editar-expediente.html" class="btn-action edit" title="Editar expediente" aria-label="Editar EXP-2025/320">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de Consulta Detallada de Expediente -->
+    <div id="docket-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-docket-title">
+        <div class="client-detail-modal" style="max-width: 820px;">
+            <header class="modal-header">
+                <h3 id="modal-docket-title" class="modal-title">Ficha del Expediente</h3>
+                <button type="button" id="btn-close-modal" class="btn-close-modal" aria-label="Cerrar modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </header>
+
+            <div class="modal-body" id="modal-docket-content">
+                <!-- Contenido dinámico con pestañas inyectado por JavaScript -->
+            </div>
+
+            <footer class="modal-footer">
+                <button type="button" id="btn-close-modal-footer" class="btn-secondary">Cerrar</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/ui-core.js"></script>
+    <script src="../../js/sidebar.js"></script>
+    <script src="../../js/permissions.js"></script>
+    <script src="../../js/dashboard.js"></script>
+    <script src="../../js/expedientes/expedientes.js"></script>
+</body>
+</html>
+
